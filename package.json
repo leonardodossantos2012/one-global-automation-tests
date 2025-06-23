@@ -7,7 +7,7 @@
     "test": "playwright test",
     "test:brazil": "playwright test tests/validate.currency.spec.ts --grep @EUR @BR",
     "test:thailand": "playwright test tests/validate.currency.spec.ts --grep @EUR @THA",
-    "test:validate": "playwright test tests/validate.currency.spec.ts --grep @$CURRENCY @$COUNTRY",
+    "test:validate": "playwright test tests/validate.currency.spec.ts --grep @$CURRENCY @$COUNTRY @$DESTINATION",
     "codegen": "playwright codegen https://www.betterroaming.com/"
   },
   "keywords": [
