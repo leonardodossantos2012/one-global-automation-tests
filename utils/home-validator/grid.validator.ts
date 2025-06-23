@@ -12,6 +12,7 @@ export class GridValidator {
   private readonly page: Page;
   private readonly validationErrors: string[] = [];
   private readonly dataInteractor: DataInteractor;
+  private readonly timeout: number = 10000;
 
   constructor(page: Page) {
     this.page = page;
@@ -37,6 +38,7 @@ export class GridValidator {
 
   private async getGridItems() {
     const gridItems = this.page.locator(plansMapping.gridSelector);
+    await gridItems.first().waitFor({ timeout: this.timeout });
     const itemCount = await gridItems.count();
     console.log(`Found ${itemCount} grid items to validate`);
     
@@ -71,7 +73,7 @@ export class GridValidator {
     const expectedValues = DataFormatter.formatProductValues(product);
     
     console.log(`\n📋 Grid ${gridIndex}: ${product.name}`);
-    console.log(`   Expected: ${expectedValues.price} ${product.price_currency} | ${expectedValues.dataPlan} | ${expectedValues.duration}`);
+    console.log(`   Expected: ${expectedValues.price} ${product.price_currency} | ${expectedValues.dataPlan} | ${expectedValues.duration} | ${expectedValues.planType}`);
     
     const validationResults = await FieldValidator.validateAllProductFields(
       gridItem, 

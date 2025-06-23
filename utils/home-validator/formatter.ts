@@ -21,7 +21,8 @@ export class DataFormatter {
     return {
       price: product.price.toString(),
       dataPlan: this.formatDataPlan(product.data, product.data_unit),
-      duration: this.formatDuration(product.duration, product.duration_unit)
+      duration: this.formatDuration(product.duration, product.duration_unit),
+      planType: 'Data only'
     };
   }
 } 

@@ -13,6 +13,7 @@ export interface ExpectedProductValues {
   price: string;
   dataPlan: string;
   duration: string;
+  planType: string;
 }
 
 export interface ValidationResult {

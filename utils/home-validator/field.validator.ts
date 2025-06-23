@@ -11,7 +11,8 @@ export class FieldValidator {
     const validations = [
       this.validateField(gridItem, expectedValues.price, 'Price', gridIndex, errorCollector),
       this.validateField(gridItem, expectedValues.dataPlan, 'Data plan', gridIndex, errorCollector),
-      this.validateField(gridItem, expectedValues.duration, 'Duration', gridIndex, errorCollector)
+      this.validateField(gridItem, expectedValues.duration, 'Duration', gridIndex, errorCollector),
+      this.validateField(gridItem, expectedValues.planType, 'Plan Type', gridIndex, errorCollector)
     ];
     
     return Promise.all(validations);
