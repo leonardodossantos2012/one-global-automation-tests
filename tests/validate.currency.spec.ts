@@ -21,7 +21,7 @@ test.describe('Validate Currency', () => {
     const countryCode = process.env.COUNTRY_CODE || 'THA';
     const currency = process.env.CURRENCY || 'EUR';
     const productsData = (currencyData.countries as any)[countryCode]?.[currency]?.products;
-    const url = process.env.BASE_URL || 'https://www.betterroaming.com/';
+    const url = process.env.PAGE_URL || '';
 
     for (const product of productsData) {
       const productsAPI = await ProductsApi.getProductsByCurrency(request, currency, product.id);

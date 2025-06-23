@@ -36,7 +36,7 @@ export interface ProductsApiResponse {
  */
 
 export class ProductsApi {
-  private static readonly defaultBaseUrl = 'https://customer-care-api.io3.com';
+  private static readonly defaultBaseUrl = process.env.API_URL || '';
   private static readonly productsEndpoint = '/v1/products/default/';
 
   /**
