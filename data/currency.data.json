@@ -1,0 +1,50 @@
+{
+    "countries": {
+        "THA": {
+            "EUR": {
+                "country_code": "THA",
+                "name": "Thailand",
+                "price_currency": "EUR",
+                "products": [
+                    {
+                        "id": "-aAXpJiravA1APTX4V3IejGzHIs6Qav2pzZj7CpzPd0=",
+                        "name": "Local Thailand - 30 Days - 5 GB",
+                        "data_plan": "5 GB"
+                    },
+                    {
+                        "id": "81INSdQSV2IPK9eqKpwrodAwLmDrpQt5o4F4hoak4o0=",
+                        "name": "Local Thailand - 7 Days - 1 GB",
+                        "data_plan": "1 GB"
+                    },
+                    {
+                        "id": "MBMY6f4VeZoXg5l-SaCc1ylQ1ywJMxvW3pfrCycG8_8=",
+                        "name": "Local Thailand - 30 Days - 3 GB",
+                        "data_plan": "3 GB"
+                    },
+                    {
+                        "id": "DJx5xcfTpGIzTANaVbjzvBAOikq5sUjyXQpd6vpq79A=",
+                        "name": "Local Thailand - 30 Days - 20 GB"
+                    },
+                    {
+                        "id": "LkW5sAdpptszKlkKDC7-YjL9qQEW3FqLp5ZAQVPFYyI=",
+                        "name": "Local Thailand - 30 Days - 10 GB"
+                    }
+                ]
+            }
+        },
+        "BR": {
+            "EUR": {
+                "country_code": "BR",
+                "name": "Brazil",
+                "price_currency": "EUR",
+                "products": [
+                    {
+                        "id": "2QwZzO8S2atURCYzHOElEbpP9TVt82QqyMiI05UUhNk=",
+                        "name": "Local Brazil - 7 Days - 1 GB",
+                        "data_plan": "1 GB"
+                    }
+                ]
+            }
+        }
+    }
+}
