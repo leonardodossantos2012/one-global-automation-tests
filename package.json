@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
-    "test:brazil": "export DESTINATION=BR && export CURRENCY=EUR && export COUNTRY=BR && playwright test tests/validate.currency.spec.ts --grep @$CURRENCY @$COUNTRY",
-    "test:thailand": "export DESTINATION=THA && export CURRENCY=EUR && export COUNTRY=THA && playwright test tests/validate.currency.spec.ts --grep @$CURRENCY @$COUNTRY",
-    "test:validate": "export CURRENCY=$CURRENCY export COUNTRY=$COUNTRY && playwright test tests/validate.currency.spec.ts --grep @$CURRENCY @$COUNTRY",
+    "test:brazil": "playwright test tests/validate.currency.spec.ts --grep @EUR @BR",
+    "test:thailand": "playwright test tests/validate.currency.spec.ts --grep @EUR @THA",
+    "test:validate": "playwright test tests/validate.currency.spec.ts --grep @$CURRENCY @$COUNTRY",
     "codegen": "playwright codegen https://www.betterroaming.com/"
   },
   "keywords": [

@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { ProductsApi } from '../fixtures/get.currency';
 import currencyData from '../data/currency.data.json';
 import { HomePage } from '@/utils/page-objects/home/home.page';
-import { GridValidator } from '@/utils/page-objects/home/grid.validator';
+import { GridValidator } from '@/utils/home-validator/grid.validator';
 
 interface Country {
   country_code: string;
@@ -18,10 +18,14 @@ let productDataArray: any[] = [];
 test.describe('Validate Currency', () => {
   test.beforeEach(async ({ request, page }) => {
     // Get the currency data from the currency.data.json file
-    const countryCode = process.env.COUNTRY_CODE || 'THA';
-    const currency = process.env.CURRENCY || 'EUR';
+    const countryCode = process.env.COUNTRY_CODE || '';
+    const currency = process.env.CURRENCY || '';
     const productsData = (currencyData.countries as any)[countryCode]?.[currency]?.products;
     const url = process.env.PAGE_URL || '';
+
+    if (countryCode === '' && currency === '' && url === '') {
+      throw new Error('COUNTRY_CODE, CURRENCY, and PAGE_URL must be set');
+    }
 
     for (const product of productsData) {
       const productsAPI = await ProductsApi.getProductsByCurrency(request, currency, product.id);
