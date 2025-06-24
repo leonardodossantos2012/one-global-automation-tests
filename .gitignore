@@ -11,8 +11,8 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-# Environment setup script
-setup-env.sh
+# # Environment setup script
+# setup-env.sh
 
 # Playwright
 test-results/

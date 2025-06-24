@@ -10,8 +10,8 @@ export class HomePage {
         this.page = page;
     }
 
-    async goto(url: string): Promise<void> {
-        await this.page.goto(url);
+    async goto(): Promise<void> {
+        await this.page.goto('/');
         await this.page.waitForSelector(homeMapping.acceptAllButton, { state: 'visible' });
         await this.page.click(homeMapping.acceptAllButton);
     }

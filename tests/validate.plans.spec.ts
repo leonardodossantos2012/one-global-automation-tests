@@ -4,15 +4,7 @@ import currencyData from '../data/currency.data.json';
 import { HomePage } from '@/utils/page-objects/home/home.page';
 import { GridValidator } from '@/utils/home-validator/grid.validator';
 
-interface Country {
-  country_code: string;
-  name: string;
-  price_currency: string;
-  products: {
-    id: string;
-    name: string;
-  }[];
-}
+
 let productDataArray: any[] = [];
 
 test.describe('Validate Currency', () => {
@@ -40,10 +32,10 @@ test.describe('Validate Currency', () => {
 
     // Go to the home page
     const homePage = new HomePage(page);
-    await homePage.goto(url);
+    await homePage.goto();
   });
 
-  test('@EUR @THB @BR Validate the data plan if is returned the value with success', async ({ page }) => {
+  test('@EUR @THA @BR Validate the data plan if is returned the value with success', async ({ page }) => {
     const currencyToUpdate = process.env.CURRENCY || 'EUR';
     const destination = process.env.DESTINATION || 'BR';
     const homePage = new HomePage(page);

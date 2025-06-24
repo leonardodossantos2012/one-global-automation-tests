@@ -2,10 +2,15 @@
 
 A comprehensive automated testing suite using Playwright for the One Global application, featuring clean architecture, parallel execution, and multi-country support.
 
-## 🏗️ Architecture Planning
+## 🗺️ Multi-Country Tests Strategy
+![Multi-Country Tests Strategy](./docs/architecture-tests.png)
+
 
 ### **Global Software Testing Strategy**
 One Global operates as a global software company serving multiple countries and markets. This testing framework was designed with a **multi-country approach** to maximize efficiency and minimize code duplication while ensuring comprehensive test coverage across all markets.
+
+This project implements automated testing for the One Global application with support for multiple countries (Brazil and Thailand) and currencies. It follows clean code principles with a modular, maintainable architecture.
+
 
 ### **Key Architectural Decisions**
 
@@ -37,9 +42,6 @@ One Global operates as a global software company serving multiple countries and 
 | Sequential execution | Parallel execution |
 | Longer development cycles | Faster development and deployment |
 
-## 🚀 Project Overview
-
-This project implements automated testing for the One Global application with support for multiple countries (Brazil and Thailand) and currencies. It follows clean code principles with a modular, maintainable architecture.
 
 ## 🎯 Main Decisions & Rationale
 
@@ -164,15 +166,8 @@ npx playwright install --with-deps
 # Setup environment
 source setup-env.sh
 ```
+> Note: The setup-env.sh file is included here solely to facilitate testing for this challenge. In a real-world project, it is not recommended to commit environment setup scripts containing sensitive or environment-specific information to version control.
 
-### Environment Configuration
-```bash
-# Copy environment template
-cp env.example .env
-
-# Or use the setup script
-source setup-env.sh
-```
 
 ## 🧪 Running Tests
 
@@ -182,40 +177,24 @@ source setup-env.sh
 source setup-env.sh
 
 # Verify environment
-echo "Country: $COUNTRY_CODE"
-echo "Currency: $CURRENCY"
-echo "Destination: $DESTINATION"
+echo "  COUNTRY_CODE: $COUNTRY_CODE"
+echo "  CURRENCY: $CURRENCY"
+echo "  DESTINATION: $DESTINATION"
+echo "  API_URL: $API_URL"
+echo "  PAGE_URL: $PAGE_URL"
 ```
 
 ### Test Commands
 ```bash
-# Run all tests
-npm test
-
 # Run tests for specific country
 npm run test:brazil      # Brazil tests
 npm run test:thailand    # Thailand tests
-
-# Run with custom environment
-npm run test:validate    # Uses current environment variables
-
-# Run with cross-env (cross-platform)
-cross-env COUNTRY_CODE=BR CURRENCY=EUR npm run test:validate
 ```
 
 ### Development Commands
 ```bash
 # Generate test code
 npm run codegen
-
-# Run tests in UI mode
-npx playwright test --ui
-
-# Run tests in headed mode
-npx playwright test --headed
-
-# Run specific test file
-npx playwright test tests/validate.plans.spec.ts
 ```
 
 ## 🌍 Multi-Country Support
@@ -410,18 +389,6 @@ npx playwright test --debug
 npx playwright test tests/validate.plans.spec.ts --debug
 ```
 
-### Trace Viewer
-```bash
-# Open trace file
-npx playwright show-trace test-results/trace.zip
-```
-
-### Code Generation
-```bash
-# Generate test code from browser actions
-npm run codegen
-```
-
 ## 📊 Test Reports
 
 ### HTML Report
@@ -437,17 +404,6 @@ npx playwright show-report
 - **Videos**: `videos/` (on failure)
 - **Traces**: `traces/` (for debugging)
 
-## 🚀 Performance Metrics
-
-### Execution Times
-- **First Run**: ~60 seconds (downloads + installs)
-- **Cached Run**: ~15 seconds (uses cache)
-- **Parallel Execution**: 2x faster with country matrix
-
-### Cache Benefits
-- **Dependencies**: 90% faster
-- **Browsers**: 83% faster
-- **Overall**: 86% faster subsequent runs
 
 ## 🤝 Contributing
 
@@ -463,6 +419,7 @@ npx playwright show-report
 - [Clean Code Principles](https://blog.cleancoder.com/uncle-bob/2014/11/24/FPvsOO.html)
 - [GitHub Actions Caching](https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows)
 - [TypeScript Best Practices](https://github.com/microsoft/TypeScript/wiki/Coding-guidelines)
+
 
 ## 📄 License
 
