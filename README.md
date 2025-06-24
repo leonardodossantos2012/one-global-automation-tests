@@ -145,6 +145,13 @@ GridValidator (Orchestrator)
 └── Types (Shared Interfaces)
 ```
 
+## 🎥 Local Test Execution Demo
+
+Watch the following video to see the automation tests running locally on this project:
+
+[▶️ Download or view the video directly](./docs/execution-local.mov)
+
+
 ## 🛠️ Setup & Installation
 
 ### Prerequisites

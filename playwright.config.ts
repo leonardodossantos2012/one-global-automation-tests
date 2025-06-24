@@ -33,7 +33,7 @@ export default defineConfig({
     
     /* Record video on failure */
     video: 'retain-on-failure',
-    headless: true,
+    headless: false,
   },
 
   /* Configure projects for major browsers */
