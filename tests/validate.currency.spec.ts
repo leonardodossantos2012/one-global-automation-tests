@@ -49,6 +49,7 @@ test.describe('Validate Currency', () => {
     const homePage = new HomePage(page);
     await homePage.selectCurrency(currencyToUpdate);
     await homePage.searchYourDestination(destination);
+    await page.waitForTimeout(10000);
 
     // Validate grid items against API data using the dedicated validator
     const gridValidator = new GridValidator(page);
