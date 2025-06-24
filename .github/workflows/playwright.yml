@@ -40,6 +40,13 @@ jobs:
         export PAGE_URL=${{ secrets.PAGE_URL }}
         export BASE_URL=${{ secrets.BASE_URL }}
         export API_BASE_URL=${{ secrets.API_BASE_URL }}
+        echo "COUNTRY_CODE: $COUNTRY_CODE"
+        echo "CURRENCY: $CURRENCY"
+        echo "DESTINATION: $DESTINATION"
+        echo "API_URL: $API_URL"
+        echo "PAGE_URL: $PAGE_URL"
+        echo "BASE_URL: $BASE_URL"
+        echo "API_BASE_URL: $API_BASE_URL"
         npm run test:validate
       env:
         CI: true
