@@ -1,0 +1,30 @@
+{
+  "name": "one-global-automation-tests",
+  "version": "1.0.0",
+  "description": "Automated testing suite using Playwright for One Global application",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:brazil": "cross-env DESTINATION=BR CURRENCY=EUR COUNTRY=BR playwright test tests/validate.plans.spec.ts --grep @$CURRENCY @$COUNTRY",
+    "test:thailand": "cross-env DESTINATION=THA CURRENCY=EUR COUNTRY=THA playwright test tests/validate.plans.spec.ts --grep @$CURRENCY @$COUNTRY",
+    "test:validate": "cross-env CURRENCY=$CURRENCY COUNTRY=$COUNTRY DESTINATION=$DESTINATION playwright test tests/validate.plans.spec.ts --grep @$CURRENCY @$COUNTRY @$DESTINATION",
+    "codegen": "playwright codegen https://www.betterroaming.com/"
+  },
+  "keywords": [
+    "playwright",
+    "testing",
+    "automation",
+    "e2e",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.0.0",
+    "cross-env": "^7.0.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0"
+  }
+}
