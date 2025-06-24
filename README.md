@@ -149,7 +149,7 @@ GridValidator (Orchestrator)
 
 Watch the following video to see the automation tests running locally on this project:
 
-[▶️ Download or view the video directly](./docs/execution-local.mov)
+[▶️ Download or view the video directly](https://drive.google.com/file/d/1xXd07fh2LdqFrQwL3X1UZMMMR1AoILDL/view?usp=drive_link)
 
 
 ## 🛠️ Setup & Installation
