@@ -32,7 +32,15 @@ jobs:
       run: npx playwright install --with-deps
     
     - name: Run E2E tests for ${{ matrix.country }}
-      run: npm run test:validate
+      run: |
+        export COUNTRY_CODE=${{ matrix.country }}
+        export CURRENCY=EUR
+        export DESTINATION=${{ matrix.country }}
+        export API_URL=${{ secrets.API_URL }}
+        export PAGE_URL=${{ secrets.PAGE_URL }}
+        export BASE_URL=${{ secrets.BASE_URL }}
+        export API_BASE_URL=${{ secrets.API_BASE_URL }}
+        npm run test:validate
       env:
         CI: true
         COUNTRY_CODE: ${{ matrix.country }}
