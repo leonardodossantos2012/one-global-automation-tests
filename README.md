@@ -210,15 +210,6 @@ npm run codegen
 - **Brazil (BR)**: EUR currency
 - **Thailand (THA)**: EUR currency
 
-### Environment Variables
-```bash
-export COUNTRY_CODE=BR      # or THA
-export CURRENCY=EUR
-export DESTINATION=BR       # or THA
-export API_URL='https://customer-care-api.io3.com'
-export PAGE_URL='https://www.betterroaming.com/'
-```
-
 ## 🚀 CI/CD Pipeline
 
 ### GitHub Actions Features
@@ -290,23 +281,6 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
 });
-```
-
-### Environment Variables
-```bash
-# Application URLs
-BASE_URL=https://www.betterroaming.com/
-API_URL=https://customer-care-api.io3.com/
-
-# Test Configuration
-HEADLESS=true
-SLOW_MO=1000
-TIMEOUT=30000
-
-# Country Configuration
-COUNTRY_CODE=BR
-CURRENCY=EUR
-DESTINATION=BR
 ```
 
 ## 📝 Writing Tests
