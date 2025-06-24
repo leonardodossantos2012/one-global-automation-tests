@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Playwright E2E Tests
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   e2e-test:
-    timeout-minutes: 60
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -31,7 +31,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     
-    - name: Run Playwright tests for ${{ matrix.country }}
+    - name: Run E2E tests for ${{ matrix.country }}
       run: npm run test:validate
       env:
         CI: true
@@ -40,11 +40,13 @@ jobs:
         DESTINATION: ${{ matrix.country }}
         API_URL: ${{ secrets.API_URL }}
         PAGE_URL: ${{ secrets.PAGE_URL }}
-
+        BASE_URL: ${{ secrets.BASE_URL }}
+        API_BASE_URL: ${{ secrets.API_BASE_URL }}
+    
     - uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: playwright-report-${{ matrix.country }}-${{ matrix.shardIndex }}
+        name: e2e-test-results-${{ matrix.country }}-${{ matrix.shardIndex }}
         path: |
           playwright-report/
           test-results/
